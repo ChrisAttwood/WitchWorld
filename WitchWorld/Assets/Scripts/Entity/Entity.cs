@@ -9,9 +9,17 @@ public class Entity : MonoBehaviour {
 
     public Sequence ExampleSequence;
 
+    public Sequence WalkSequence;
+    // public Sequence Idol;
+
+    public bool IsTravelling = true;
+
+
+    public Body Body { get; set; }
 
     private void Start()
     {
+        Body = GetComponent<Body>();
         SetSequence(ExampleSequence);
     }
 
@@ -23,6 +31,15 @@ public class Entity : MonoBehaviour {
 
 
 	void Update () {
+
+
+        if (IsTravelling)
+        {
+            Travel();
+            return;
+        }
+
+
 
         if (CurrentSequence == null) return;
 
@@ -37,6 +54,16 @@ public class Entity : MonoBehaviour {
 
 
 	}
+
+    public void Travel()
+    {
+        if (index >= WalkSequence.Rules.Length)
+        {
+            index = 0;
+        }
+
+        WalkSequence.Rules[index].Run(this);
+    }
 
     public void NextRule()
     {

@@ -184,6 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 593343135}
   - component: {fileID: 593343134}
+  - component: {fileID: 593343136}
   m_Layer: 0
   m_Name: Entity
   m_TagString: Untagged
@@ -203,6 +204,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExampleSequence: {fileID: 11400000, guid: 79b8f0c63d803f04d956307c600ac168, type: 2}
+  WalkSequence: {fileID: 11400000, guid: 836197f4525e41a4ca50809bbc61eb58, type: 2}
+  IsTravelling: 1
 --- !u!4 &593343135
 Transform:
   m_ObjectHideFlags: 0
@@ -216,6 +219,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &593343136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 593343133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc10f5448af59d4cb8a666e1227da50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Head: {fileID: 21300000, guid: 4609546986de0b648a05dbe31b564138, type: 3}
+  Neck: {fileID: 21300000, guid: 09b0af6883810d7499c2e5f8f2f7562b, type: 3}
+  UpperBody: {fileID: 21300000, guid: 47a6a75ef11567e4bb21dfe556b76d5b, type: 3}
+  LowerBody: {fileID: 21300000, guid: 5e44b0aa797602f4892562061ae3726d, type: 3}
+  UpperArmR: {fileID: 21300000, guid: 30c9974ed0806214ba5d783ad718d87a, type: 3}
+  UpperArmL: {fileID: 21300000, guid: 30c9974ed0806214ba5d783ad718d87a, type: 3}
+  LowerArmR: {fileID: 21300000, guid: b93d5e01aff026f48bd6dd06fd10e7d6, type: 3}
+  LowerArmL: {fileID: 21300000, guid: b93d5e01aff026f48bd6dd06fd10e7d6, type: 3}
+  HandR: {fileID: 21300000, guid: 1848ffa36dbee5440b334189eb0bc44d, type: 3}
+  HandL: {fileID: 21300000, guid: 1848ffa36dbee5440b334189eb0bc44d, type: 3}
+  UpperLegR: {fileID: 21300000, guid: c8a0244db3cb3b64e9577ccf38f6fb92, type: 3}
+  UpperLegL: {fileID: 21300000, guid: c8a0244db3cb3b64e9577ccf38f6fb92, type: 3}
+  LowerLegR: {fileID: 21300000, guid: c60f5a203062448428aaff740bfdad99, type: 3}
+  LowerLegL: {fileID: 21300000, guid: c60f5a203062448428aaff740bfdad99, type: 3}
+  FootR: {fileID: 21300000, guid: 059771ea789d31449b0a2d992cf42765, type: 3}
+  FootL: {fileID: 21300000, guid: 059771ea789d31449b0a2d992cf42765, type: 3}
+  Empty: {fileID: 0}
+  SkinTone: {r: 0.9, g: 0.7, b: 0.7, a: 1}
 --- !u!1001 &795254128
 Prefab:
   m_ObjectHideFlags: 0

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7df106e88a111914da4a364773fd7e32, type: 3}
-  m_Name: Example Sequence
+  m_Name: Basic Walk
   m_EditorClassIdentifier: 
   Rules:
-  - {fileID: 11400000, guid: d8421d7e0e0379d49b7676cd0223ee19, type: 2}
-  - {fileID: 11400000, guid: ebe9348ff0b7b624c903562fd139fa7c, type: 2}
-  - {fileID: 11400000, guid: df58407e9d95c184f88046a2d446e96e, type: 2}
-  - {fileID: 11400000, guid: dc9b9b7da3735cb43a700142c8ed2f02, type: 2}
+  - {fileID: 11400000, guid: 9cc35e56e2f14a54c8d8421cf89de992, type: 2}
+  - {fileID: 11400000, guid: 2fd4a40a71d6e6444aba618ad7636340, type: 2}
+  - {fileID: 11400000, guid: 6993df1b1c9393849ab4a32910538376, type: 2}
+  - {fileID: 11400000, guid: 2fd4a40a71d6e6444aba618ad7636340, type: 2}
