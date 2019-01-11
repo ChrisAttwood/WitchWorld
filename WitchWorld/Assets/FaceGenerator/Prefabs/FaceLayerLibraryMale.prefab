@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1000014223115670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4000011435554898}
+  - component: {fileID: 114000012261961034}
+  m_Layer: 0
+  m_Name: FaceLayerLibraryMale
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000011435554898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014223115670}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114000012261961034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014223115670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d3dfb2f821f5c4d8b262effcc8766c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gender: 0
+  background: {fileID: 0}
+  hairBackground:
+  - {fileID: 21300000, guid: 75465c6928d6a8745a0222a83c1c0260, type: 3}
+  - {fileID: 21300000, guid: b1e6e2009b83dc346932b40bacaabf8c, type: 3}
+  - {fileID: 21300000, guid: b5f314553228cb9439366cc59d4133f1, type: 3}
+  - {fileID: 21300000, guid: 1bf9b357dbcb5fd42bbfa7566bdec089, type: 3}
+  face:
+  - {fileID: 21300000, guid: 99db964964cb273449d41246502d156b, type: 3}
+  - {fileID: 21300000, guid: 51d641985cbdaac429cec8458a004678, type: 3}
+  - {fileID: 21300000, guid: d53260fa507128d40885c63ab06753c3, type: 3}
+  - {fileID: 21300000, guid: 23e136f441b65b14ebdc4e41c1025ae1, type: 3}
+  eyes:
+  - {fileID: 21300000, guid: f3a7412ec94c79341bdfe94e2871ae70, type: 3}
+  - {fileID: 21300000, guid: c15d242497c8f494296fae7dbcf90007, type: 3}
+  - {fileID: 21300000, guid: 92ba14aa73a21d548bc970f26684477a, type: 3}
+  - {fileID: 21300000, guid: 661cf82ba0aa69a46b34061c931f022d, type: 3}
+  iris:
+  - {fileID: 21300000, guid: 3db409f797a152d4ebe9a460cfe386f4, type: 3}
+  - {fileID: 21300000, guid: 3da3cd891a3524844b829d51985f91bc, type: 3}
+  - {fileID: 21300000, guid: f4701320a07b01240a5d076bcd25ce2a, type: 3}
+  - {fileID: 21300000, guid: 5ab8cc9aa8d64fe4e8b0020faaaace25, type: 3}
+  nose:
+  - {fileID: 21300000, guid: f2750b144a404e741915edd2bf0860a6, type: 3}
+  mouth:
+  - {fileID: 21300000, guid: cceea0e31032f634fa4f0b3b5b705b19, type: 3}
+  - {fileID: 21300000, guid: a81afb4f19f94b14abf4da5377614e25, type: 3}
+  hair:
+  - {fileID: 21300000, guid: 4a41fe307aa3c30419fca9dca0d6d7b3, type: 3}
+  - {fileID: 21300000, guid: a0f95fc4ead9f9b48a740828a4bafa4e, type: 3}
+  - {fileID: 21300000, guid: 90dc31a6271a62f47a68f65c1b03c533, type: 3}
+  - {fileID: 21300000, guid: 127b711c5b86f354998572621e3b62a2, type: 3}
+  eyebrows:
+  - {fileID: 21300000, guid: eac9fdfb6d0863343b120820823ea002, type: 3}
+  - {fileID: 21300000, guid: 40888c73b9be6344b87c1271c092bc20, type: 3}
