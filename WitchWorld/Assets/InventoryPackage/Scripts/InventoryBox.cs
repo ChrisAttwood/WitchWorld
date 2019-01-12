@@ -7,7 +7,7 @@ public class InventoryBox : MonoBehaviour {
 
     public int slotsX;
     public int slotsY;
-    public List<string> slotNames;
+    public List<ItemType> presetSlotTypes;
     public List<InventorySlot> inventorySlots;
     public GameObject prefabSlot;
     private GridLayoutGroup gridLayoutGroup;
@@ -36,8 +36,14 @@ public class InventoryBox : MonoBehaviour {
         for (int i = 0; i < slotsX * slotsY; i++)
         {
             GameObject goSlot = GameObject.Instantiate(prefabSlot, Vector3.zero, prefabSlot.transform.rotation);
+            InventorySlot iSlot = goSlot.GetComponent<InventorySlot>();
+            if (presetSlotTypes.Count > i)
+            {
+                iSlot.allowedItems = presetSlotTypes[i];
+                iSlot.SetCellText(presetSlotTypes[i].ToString());
+            }
             goSlot.transform.SetParent(this.transform);
-            inventorySlots.Add(goSlot.GetComponent<InventorySlot>());
+            inventorySlots.Add(iSlot);
         }
         SetAllPaddingBounds();
         
@@ -58,8 +64,6 @@ public class InventoryBox : MonoBehaviour {
         bool foundSlot = false;
         for (int i = 0; i < inventorySlots.Count && foundSlot == false; i++)
         {
-            Debug.Log(inventorySlots[i].IsEmpty());
-            Debug.Log(inventorySlots[i].ItemIsOfAllowedType(itemToAdd.itemType));
             if (inventorySlots[i].IsEmpty() && inventorySlots[i].ItemIsOfAllowedType(itemToAdd.itemType))
             {
                 inventorySlots[i].AddItemToSlot(itemToAdd);

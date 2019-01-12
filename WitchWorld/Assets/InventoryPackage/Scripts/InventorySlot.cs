@@ -11,6 +11,8 @@ public class InventorySlot : MonoBehaviour {
     public Color opaque;
     public Color transparent;
     public ItemType allowedItems;
+    public Text slotText;
+    private string slotDesc;
 
     public void CellClick()
     {
@@ -21,6 +23,12 @@ public class InventorySlot : MonoBehaviour {
         {
             PickUp();
         }
+    }
+
+    public void SetCellText(String newDescription)
+    {
+        slotText.text = newDescription;
+        slotDesc = newDescription;
     }
 
     private void PickUp()
@@ -61,15 +69,17 @@ public class InventorySlot : MonoBehaviour {
 
     public void AddItemToSlot(InventoryItem inventoryItem)
     {
-            itemInSlot = inventoryItem;
-            itemImage.sprite = inventoryItem.itemImage;
-            itemImage.color = opaque;
+        itemInSlot = inventoryItem;
+        itemImage.sprite = inventoryItem.itemImage;
+        itemImage.color = opaque;
+        slotText.color = transparent;
     }
 
     public void RemoveItem()
     {
         itemInSlot = null;
         itemImage.color = transparent;
+        slotText.color = opaque;
     }
 
     public bool IsEmpty()
