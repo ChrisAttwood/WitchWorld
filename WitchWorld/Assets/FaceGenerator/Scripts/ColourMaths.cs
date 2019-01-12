@@ -32,6 +32,16 @@ public static class ColourMaths {
 		return colour;
 	}
 
+    public static Color ReturnRandomClothingColour()
+    {
+        Color colour = new Color();
+        colour.a = 1.0f;
+        colour.r = Random.Range(0.0f, 1f);
+        colour.g = Random.Range(0.0f, 1f);
+        colour.b = Random.Range(0.0f, 1f);
+        return colour;
+    }
+
 	private static float ReturnMixAmountForAlphaComponent (float baseValue, float standardMix, float mixVariation){
 		float minimumMixAmount = (baseValue * (standardMix - mixVariation));
 		float maximumMixAmount = (baseValue * (standardMix + mixVariation));

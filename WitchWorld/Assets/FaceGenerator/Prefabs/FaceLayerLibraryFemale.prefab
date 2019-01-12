@@ -85,3 +85,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 41472a4da7142d84390c67b7a0cedd89, type: 3}
   - {fileID: 21300000, guid: af687bd45c180a64a861ddf8b9b74d23, type: 3}
   - {fileID: 21300000, guid: 942c53d5a84f6e7449f64343f469559f, type: 3}
+  hat:
+  - {fileID: 21300000, guid: 504277953482fe24786b26ade743f697, type: 3}
+  robe:
+  - {fileID: 21300000, guid: 8a61742af19d38348aecc3b4086ebc27, type: 3}

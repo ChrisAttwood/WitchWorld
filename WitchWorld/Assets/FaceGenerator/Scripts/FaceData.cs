@@ -12,9 +12,12 @@ public class FaceData
     public int mouthImageNumber;
     public int noseImageNumber;
     public int eyebrowsImageNumber;
+    public int robeImageNumber;
+    public int hatImageNumber;
     public Color skinColour;
     public Color hairColour;
     public Color eyeColour;
+    public Color clothingColour;
 
     public FaceData()
     {

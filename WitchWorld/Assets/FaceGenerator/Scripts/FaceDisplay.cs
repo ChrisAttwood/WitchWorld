@@ -35,6 +35,8 @@ public class FaceDisplay : MonoBehaviour
         UpdateFaceLayerSprite("Mouth", faceLibrary.mouth, faceData.mouthImageNumber, faceData.skinColour);
         UpdateFaceLayerSprite("Eyebrows", faceLibrary.eyebrows, faceData.eyebrowsImageNumber, faceData.hairColour);
         UpdateFaceLayerSprite("Hair", faceLibrary.hair, faceData.hairImageNumber, faceData.hairColour);
+        UpdateFaceLayerSprite("Robe", faceLibrary.robe, faceData.robeImageNumber, faceData.clothingColour);
+        UpdateFaceLayerSprite("Hat", faceLibrary.hat, faceData.hatImageNumber, faceData.clothingColour);
     }
 
     private void UpdateFaceLayerSprite(string layerName, List<Sprite> spriteList, int spriteIndex, Color colour)

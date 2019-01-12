@@ -51,8 +51,11 @@ public static class FaceGenerator
         faceData.mouthImageNumber = Random.Range(0, faceLibrary.mouth.Count);
         faceData.noseImageNumber = Random.Range(0, faceLibrary.nose.Count);
         faceData.eyebrowsImageNumber = Random.Range(0, faceLibrary.eyebrows.Count);
+        faceData.robeImageNumber = Random.Range(0, faceLibrary.robe.Count);
+        faceData.hatImageNumber = Random.Range(0, faceLibrary.hat.Count);
         faceData.skinColour = ColourMaths.ReturnRandomSkinColour(0.1f, 1f, 0.05f);
         faceData.hairColour = ColourMaths.ReturnRandomHairColour(0.0f, 1f, Random.Range(0.0f, 1.0f));
         faceData.eyeColour = ColourMaths.ReturnRandomEyeColour();
+        faceData.clothingColour = ColourMaths.ReturnRandomClothingColour();
     }
 }

@@ -16,6 +16,8 @@ public class FaceLayerLibrary : MonoBehaviour {
 	public List <Sprite> mouth;
 	public List <Sprite> hair;
 	public List <Sprite> eyebrows;
+    public List <Sprite> hat;
+    public List <Sprite> robe;
 
     private void Awake()
     {
