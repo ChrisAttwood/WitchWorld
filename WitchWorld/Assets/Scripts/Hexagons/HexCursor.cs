@@ -44,6 +44,7 @@ public class HexCursor : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log(transform.GetHex().Coordinates);
+            transform.GetHex().RegisterClick();
         }
 
     }

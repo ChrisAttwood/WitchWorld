@@ -10,7 +10,15 @@ public class HexEngine : MonoBehaviour {
     public HexTile HexPrefab;
     public Color Colour = Color.white;
     public Dictionary<Vector3Int, HexTile> Hexes;
-   
+
+    public SeedGroup altitudeSeed1;
+    public SeedGroup altitudeSeed2;
+    public SeedGroup humiditySeed1;
+    public SeedGroup humiditySeed2;
+
+    public MapPresets mapPresets;
+    public WitchBase witchBase;
+
 
     [Range(0, 100)]
     public int Size = 10;
@@ -59,10 +67,19 @@ public class HexEngine : MonoBehaviour {
                     hex.Coordinates = v3i;
                     Hexes[v3i] = hex;
 
+                    // Added bits around altitude and humidity
+                    Vector2 v2 = new Vector2(x, y);
+                    float altitude = Noise.Generate2DNoiseValue(v2, altitudeSeed1) +
+                        Noise.Generate2DNoiseValue(v2, altitudeSeed2);
+                    float humidity = Noise.Generate2DNoiseValue(v2, humiditySeed1) +
+                        Noise.Generate2DNoiseValue(v2, humiditySeed2);
+                    hex.altitude = altitude;
+                    hex.humidity = humidity;
+                    hex.ColourSwitch(mapPresets);
                 }
             }
         }
-
+        GenerateWitchBase(new Vector3Int(0,0,0));
     }
 
 
@@ -222,6 +239,13 @@ public class HexEngine : MonoBehaviour {
         return new Vector3Int(x, y, z);
     }
 
+    private void GenerateWitchBase(Vector3Int hexCoordinates)
+    {
+        HexTile ht = Hexes[hexCoordinates];
+        WitchBase wb = Instantiate(witchBase);
+        wb.GenerateNewWitchBase();
+        ht.PairToObject(wb);
+    }
 
 }
 
