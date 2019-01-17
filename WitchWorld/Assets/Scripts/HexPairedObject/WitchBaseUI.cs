@@ -15,6 +15,12 @@ public class WitchBaseUI : MonoBehaviour
             GameObject goWitchIcon = Instantiate(witchIcon);
             goWitchIcon.transform.SetParent(mainPanel.transform);
             goWitchIcon.GetComponent<FaceDisplay>().DisplayFace(witchBase.witches[i].faceData);
+            goWitchIcon.GetComponent<WitchSelect>().witch = witchBase.witches[i];
         }
+    }
+
+    public void CloseWindow()
+    {
+        GameObject.Destroy(this.gameObject);
     }
 }

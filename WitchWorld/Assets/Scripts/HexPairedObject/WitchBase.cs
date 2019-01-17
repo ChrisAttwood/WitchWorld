@@ -25,7 +25,6 @@ public class WitchBase : HexPairedObject
 
     public override void RegisterClick()
     {
-        Debug.Log("Registered a click with inherited member");
         OpenWitchBaseUI();
     }
 
@@ -34,4 +33,5 @@ public class WitchBase : HexPairedObject
         Canvas c = Instantiate(witchUI);
         c.GetComponent<WitchBaseUI>().SetupUI(this);
     }
+
 }
