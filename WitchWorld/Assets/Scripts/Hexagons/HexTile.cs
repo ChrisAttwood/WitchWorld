@@ -7,7 +7,9 @@ public class HexTile : MonoBehaviour {
     public Vector3Int Coordinates { get; set; }
     public float altitude;
     public float humidity;
-    private HexPairedObject pairedObject;
+    public HexPairedObject pairedObject;
+    public bool inMovementRange;
+    public WitchUnit pairedUnit;
 
     public void ColourSwitch (MapPresets mp)
     {
@@ -32,13 +34,32 @@ public class HexTile : MonoBehaviour {
         pairedObject = newPairing;
         pairedObject.transform.position = this.transform.position;
         pairedObject.transform.SetParent(this.transform);
+        pairedObject.pairedToThisTile = this;
     }
 
     public void RegisterClick()
     {
-        if (pairedObject != null) {
+        if (inMovementRange == true)
+        {
+            UnitMovement.MoveUnit(this);
+        } else if (pairedObject != null) {
             pairedObject.RegisterClick();
+        } else if (pairedUnit != null)
+        {
+            pairedUnit.RegisterClick();
         }
+    }
 
+    public void HighlightMoveable()
+    {
+        inMovementRange = true;
+        HighlightTile(Color.white);
+    }
+
+    private void HighlightTile(Color highlightColour)
+    {
+        Color currentColour = GetComponent<SpriteRenderer>().color;
+        Color newColour = ColourMaths.ReturnMixedColour(highlightColour, currentColour);
+        ChangeToThisColour(newColour);
     }
 }

@@ -11,10 +11,14 @@ public class LeaveBaseOrder : MonoBehaviour
     {
         Witch witch = mainUI.witch;
         WitchBase thisWitchBase = GetComponentInParent<WitchSelectUI>().witchBase;
-        GameObject wUnit = Instantiate(witchUnit);
+        GameObject goWUnit = Instantiate(witchUnit);
         //wUnit.transform.position = thisWitchBase.transform.position
-        wUnit.GetComponent<WitchUnit>().witch = witch;
-        wUnit.GetComponent<WitchUnit>().SetupWitchColours();
+        WitchUnit wUnit = goWUnit.GetComponent<WitchUnit>();
+        wUnit.witch = witch;
+        wUnit.SetupWitchColours();
+        thisWitchBase.witches.Remove(witch);
+        wUnit.currentHex = thisWitchBase.pairedToThisTile;
+        UnitMovement.BeginMovement(wUnit);
         Destroy(GetComponentInParent<WitchBaseUI>().gameObject);
     }
 }

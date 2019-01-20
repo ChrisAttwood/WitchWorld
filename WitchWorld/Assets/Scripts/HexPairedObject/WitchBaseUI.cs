@@ -7,9 +7,11 @@ public class WitchBaseUI : MonoBehaviour
 {
     public GameObject mainPanel;
     public GameObject witchIcon;
+    public WitchBase witchBase;
 
-    public void SetupUI(WitchBase witchBase)
+    public void SetupUI(WitchBase WitchBase)
     {
+        witchBase = WitchBase;
         for (int i = 0; i < witchBase.witches.Count; i++)
         {
             GameObject goWitchIcon = Instantiate(witchIcon);

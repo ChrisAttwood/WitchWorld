@@ -7,6 +7,7 @@ using System.Linq;
 public class WitchUnit : MonoBehaviour
 {
     public Witch witch;
+    public HexTile currentHex;
 
     public List<SpriteRenderer> layers;
 
@@ -38,5 +39,10 @@ public class WitchUnit : MonoBehaviour
                                where spRend.name == layerName
                                select spRend).Single();
         return spriteToReturn;
+    }
+
+    public void RegisterClick()
+    {
+        UnitMovement.BeginMovement(this);
     }
 }

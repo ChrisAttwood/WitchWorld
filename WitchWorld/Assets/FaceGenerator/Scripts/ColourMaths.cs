@@ -53,4 +53,18 @@ public static class ColourMaths {
 		}
 		return mixAmount;
 	}
+
+    public static Color ReturnMixedColour (Color colourA, Color colourB)
+    {
+        float newR = (colourA.r + colourB.r) / 2;
+        float newG = (colourA.g + colourB.g) / 2;
+        float newB = (colourA.b + colourB.b) / 2;
+        float newA = (colourA.a + colourB.a) / 2;
+        Color newColour;
+        newColour.r = newR;
+        newColour.g = newG;
+        newColour.b = newB;
+        newColour.a = newA;
+        return newColour;
+    }
 }

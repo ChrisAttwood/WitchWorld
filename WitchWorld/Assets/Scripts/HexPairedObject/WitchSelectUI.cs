@@ -13,6 +13,7 @@ public class WitchSelectUI : MonoBehaviour
     {
         witch = Witch;
         witchBase = thisWitchBase;
+        Debug.Log(thisWitchBase == null);
         title.text = "Give order to " + witch.fullName;
     }
 }

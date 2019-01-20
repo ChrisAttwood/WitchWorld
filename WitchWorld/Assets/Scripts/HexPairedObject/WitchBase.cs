@@ -19,12 +19,15 @@ public class WitchBase : HexPairedObject
         witches = new List<Witch>();
         for (int i = 0; i < numberOfWitches; i++)
         {
-            witches.Add(new Witch());
+            Witch w = new Witch();
+            w.RandomiseWitch();
+            witches.Add(w);
         }
     }
 
     public override void RegisterClick()
     {
+        UnitMovement.IsUnitOnBase(pairedToThisTile);
         OpenWitchBaseUI();
     }
 

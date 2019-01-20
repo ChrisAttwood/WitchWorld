@@ -12,6 +12,15 @@ public class Witch
 
     public Witch()
     {
+        //NameGenerator.NameFactory();
+        //firstName = NameGenerator.GenerateFemaleFirstName();
+        //surname = NameGenerator.GenerateSurname();
+        //fullName = firstName + " " + surname;
+        //faceData = FaceGenerator.GenerateFace(Gender.Female);
+    }
+
+    public void RandomiseWitch()
+    {
         NameGenerator.NameFactory();
         firstName = NameGenerator.GenerateFemaleFirstName();
         surname = NameGenerator.GenerateSurname();

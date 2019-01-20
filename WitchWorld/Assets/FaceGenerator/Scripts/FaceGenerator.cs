@@ -45,7 +45,6 @@ public static class FaceGenerator
         {
             faceLibrary = maleFaces;
         }
-        Debug.Log(faceLibrary == null);
         faceData.faceImageNumber = Random.Range(0, faceLibrary.face.Count);
         faceData.eyesImageNumber = Random.Range(0, faceLibrary.eyes.Count);
         faceData.hairImageNumber = Random.Range(0, faceLibrary.hair.Count);

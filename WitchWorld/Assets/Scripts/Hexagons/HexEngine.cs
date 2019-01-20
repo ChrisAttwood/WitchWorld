@@ -243,6 +243,7 @@ public class HexEngine : MonoBehaviour {
     {
         HexTile ht = Hexes[hexCoordinates];
         WitchBase wb = Instantiate(witchBase);
+        wb.pairedToThisTile = ht;
         wb.GenerateNewWitchBase();
         ht.PairToObject(wb);
     }

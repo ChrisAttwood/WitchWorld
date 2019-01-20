@@ -13,7 +13,8 @@ public class WitchSelect : MonoBehaviour
         GameObject wUI = Instantiate(witchSelectUI);
         Canvas c = GetComponentInParent<Canvas>();
         wUI.transform.SetParent(c.transform);
-        wUI.GetComponent<WitchSelectUI>().SetupMenu(witch, GetComponentInParent<WitchBase>());
+        Debug.Log(GetComponentInParent<WitchBaseUI>().witchBase == null);
+        wUI.GetComponent<WitchSelectUI>().SetupMenu(witch, GetComponentInParent<WitchBaseUI>().witchBase);
         wUI.transform.position = this.transform.position;
     }
 }
