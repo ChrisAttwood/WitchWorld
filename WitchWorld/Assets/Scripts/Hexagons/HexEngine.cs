@@ -18,6 +18,7 @@ public class HexEngine : MonoBehaviour {
 
     public MapPresets mapPresets;
     public WitchBase witchBase;
+    public Dictionary<Vector3Int, bool> Spaces;
 
 
     [Range(0, 100)]
@@ -51,7 +52,7 @@ public class HexEngine : MonoBehaviour {
 
     void Build()
     {
-
+        Spaces = new Dictionary<Vector3Int, bool>();
         for (int x = -Size; x <= Size; x++)
         {
             for (int y = -Size; y <= Size; y++)
@@ -74,8 +75,18 @@ public class HexEngine : MonoBehaviour {
                     float humidity = Noise.Generate2DNoiseValue(v2, humiditySeed1) +
                         Noise.Generate2DNoiseValue(v2, humiditySeed2);
                     hex.altitude = altitude;
+                    if(altitude< mapPresets.seaLevel)
+                    {
+                        Spaces[v3i] = false;
+                    }
+                    else
+                    {
+                        Spaces[v3i] = true;
+                    }
                     hex.humidity = humidity;
                     hex.ColourSwitch(mapPresets);
+                   
+              
                 }
             }
         }

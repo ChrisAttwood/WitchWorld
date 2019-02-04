@@ -39,7 +39,8 @@ public class HexTile : MonoBehaviour {
 
     public void RegisterClick()
     {
-        if (inMovementRange == true)
+        //if (inMovementRange == true)
+        if(UnitMovement.currentActiveUnit !=null)
         {
             UnitMovement.MoveUnit(this);
         } else if (pairedObject != null) {
@@ -60,6 +61,6 @@ public class HexTile : MonoBehaviour {
     {
         Color currentColour = GetComponent<SpriteRenderer>().color;
         Color newColour = ColourMaths.ReturnMixedColour(highlightColour, currentColour);
-        ChangeToThisColour(newColour);
+        //ChangeToThisColour(newColour);
     }
 }

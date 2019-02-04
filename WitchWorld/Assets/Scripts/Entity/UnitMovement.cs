@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public static class UnitMovement 
 {
-    private static WitchUnit currentActiveUnit;
+    public static WitchUnit currentActiveUnit;
     private static List<HexTile> highlightedTiles;
 
     public static void BeginMovement(WitchUnit wUnit)
@@ -42,7 +43,20 @@ public static class UnitMovement
 
     public static void MoveUnit(HexTile moveToThisHex)
     {
-        currentActiveUnit.transform.position = moveToThisHex.transform.position;
+        //  currentActiveUnit.Target = moveToThisHex.transform.position;
+
+        if (HexEngine.instance.Spaces.ContainsKey(moveToThisHex.transform.ToGridVector3Int()))
+        {
+            PathFinderSimple pf = new PathFinderSimple(HexEngine.instance.Spaces);
+            var path = pf.GetPath(currentActiveUnit.transform.ToGridVector3Int(), moveToThisHex.transform.ToGridVector3Int()).ToList();
+
+            currentActiveUnit.SetPath(path);
+        }
+       
+
+
+
+
         currentActiveUnit.currentHex.pairedUnit = null;
         currentActiveUnit.currentHex = moveToThisHex;
         moveToThisHex.pairedUnit = currentActiveUnit;

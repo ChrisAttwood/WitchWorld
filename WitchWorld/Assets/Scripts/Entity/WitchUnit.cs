@@ -11,6 +11,12 @@ public class WitchUnit : MonoBehaviour
 
     public List<SpriteRenderer> layers;
 
+    public Vector2 Target;
+    List<Vector3Int> Path;
+    Vector3Int? Step;
+
+
+
     public void SetupWitchColours()
     {
         FaceData faceData = witch.faceData;
@@ -21,6 +27,73 @@ public class WitchUnit : MonoBehaviour
         UpdateLayerSprite("Hat", faceData.clothingColour);
         UpdateLayerSprite("Hair", faceData.hairColour);
     }
+
+
+  
+
+        void Update()
+        {
+            if (Step != null)
+            {
+                TakeStep();
+            }
+            else
+            {
+                if (Path != null && Path.Count > 0)
+                {
+                    Move();
+                }
+            }
+
+
+
+
+        }
+
+        public void SetPath(List<Vector3Int> path)
+        {
+            HexEngine.instance.Spaces[transform.ToGridVector3Int()] = true;
+            Debug.Log(path.Count);
+            Path = path;
+            Path.Reverse();
+        }
+
+        void Move()
+        {
+            Step = Path[Path.Count - 1];
+            Path.RemoveAt(Path.Count - 1);
+        }
+
+        void TakeStep()
+        {
+            Vector2 target = HexEngine.instance.GetWorldPosition(Step.Value);
+            transform.position = Vector2.MoveTowards(transform.position, target, 0.1f);
+
+            if (transform.position.x > target.x)
+            {
+                transform.localScale = new Vector2(1, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector2(-1, 1);
+            }
+
+            if (Vector2.Distance(target, transform.position) < 0.01f)
+            {
+
+                Step = null;
+
+                if (Path.Count == 0)
+                {
+                    HexEngine.instance.Spaces[transform.ToGridVector3Int()] = false;
+           
+
+                }
+            }
+        }
+
+
+
 
     // Commented out section is to load different sprites, see exact same method in FaceDisplay.
     // Had to change this to use a spriterenderer instead though, so it is slightly different.
