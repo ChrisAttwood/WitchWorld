@@ -20,6 +20,8 @@ public class HexEngine : MonoBehaviour {
     public WitchBase witchBase;
     public Dictionary<Vector3Int, bool> Spaces;
 
+    public float Speed = 1f; 
+    private bool paused = false;
 
     [Range(0, 100)]
     public int Size = 10;
@@ -38,6 +40,11 @@ public class HexEngine : MonoBehaviour {
 
     private void Awake()
     {
+
+
+
+        Time.timeScale = Speed;
+
         instance = this;
     }
 
@@ -48,6 +55,22 @@ public class HexEngine : MonoBehaviour {
         hexWidth = hex.bounds.size.x;
         hexHeight = hex.bounds.size.y;
         Build();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            paused = !paused;
+            if (!paused)
+            {
+                Time.timeScale = Speed;
+            } else
+            {
+                Time.timeScale = 0f;
+            }
+        }
+
     }
 
     void Build()

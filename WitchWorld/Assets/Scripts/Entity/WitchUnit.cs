@@ -67,7 +67,7 @@ public class WitchUnit : MonoBehaviour
         void TakeStep()
         {
             Vector2 target = HexEngine.instance.GetWorldPosition(Step.Value);
-            transform.position = Vector2.MoveTowards(transform.position, target, 0.1f);
+            transform.position = Vector2.MoveTowards(transform.position, target, 1f * Time.deltaTime);
 
             if (transform.position.x > target.x)
             {
